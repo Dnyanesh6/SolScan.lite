@@ -14,7 +14,7 @@ import {
   SafeAreaViewBase,
 } from "react-native";
 
-const RPC = "https://api.mainnet-beta.solana.com";
+const RPC = "SOLANA_RPC_URL_HERE"; // replace with your Solana RPC URL, e.g. from QuickNode or Alchemy
 
 const rpc = async (method: string, params: any[]) => {
   const res = await fetch(RPC, {
