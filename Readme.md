@@ -40,7 +40,7 @@ I built this project to get hands-on experience with React Native and mobile dev
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/solscan-lite-mobile.git
-cd solscan-lite-mobile
+git clone [https://github.com/yourusername/solscan-lite-mobile.git](https://github.com/Dnyanesh6/SolScan.lite)
+cd solscan.lite
 npm install
-npm start
+npm expo start
