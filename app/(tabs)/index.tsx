@@ -65,7 +65,7 @@ const timeAgo = (ts: number) => {
   return `${Math.floor(s / 86400)}d ago`;
 };
 
-export function WalletScreen() {
+export default function WalletScreen() {
   const [address, setAddress] = useState(""); // the addres input by the user
   const [loading, setLoading] = useState(false); // whether we are currently loading data
   const [balance, setBalance] = useState<number | null>(null); // the SOL balance of the address

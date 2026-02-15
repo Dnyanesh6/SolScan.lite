@@ -11,7 +11,7 @@ import {
   Alert,
 } from "react-native";
 
-export function SwapScreen() {
+export default function SwapScreen() {
   const [fromAmount, setFromAmount] = useState("");
   const [toAmount, setToAmount] = useState("");
   const [fromToken, setFromToken] = useState("ETH");
