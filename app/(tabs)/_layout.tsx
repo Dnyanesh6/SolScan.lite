@@ -9,13 +9,15 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: "#16161D",
           borderTopColor: "#2A2A35",
+          paddingTop: 8,
+          paddingBottom: 20,
         },
         tabBarActiveTintColor: "#14F195",
         tabBarInactiveTintColor: "#6B7280",
       }}
     >
         <Tabs.Screen
-        name="index"
+        name="wallet"
         options={{
             title: "Wallet",
             tabBarIcon: ({ color, size }) => (
@@ -29,6 +31,26 @@ export default function TabLayout() {
           title: "Swap",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="swap-horizontal" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="explore"
+        options={{
+          title: "Explore",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="compass" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings" size={size} color={color} />
           ),
         }}
       />

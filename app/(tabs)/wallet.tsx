@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "expo-router";
 import {
   SafeAreaView,
   View,
@@ -72,6 +73,8 @@ export default function WalletScreen() {
   const [tokens, setTokens] = useState<any[]>([]); // the SPL token held by the address
   const [txns, setTxns] = useState<any[]>([]); // the recent transactions of the address
 
+  const router = useRouter();
+
   const search = async () => {
     const addr = address.trim();
     if (!addr) return Alert.alert("Enter a wallet address");
@@ -138,10 +141,10 @@ export default function WalletScreen() {
                 keyExtractor={(t) => t.mint}
                 scrollEnabled={false}
                 renderItem={({ item }) => (
-                  <View style={s.row}>
+                  <TouchableOpacity style={s.row} onPress={() => router.push(`/token/${item.mint}`)}>
                     <Text style={s.mint}>{short(item.mint, 4)}</Text>
                     <Text style={s.amount}>{item.amount}</Text>
-                  </View>
+                  </TouchableOpacity>
                 )}
               />
             </View>
