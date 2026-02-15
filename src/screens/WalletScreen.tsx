@@ -134,7 +134,7 @@ export function WalletScreen() {
             <View style={{ marginTop: 24 }}>
               <Text style={s.title}>Tokens ({tokens.length})</Text>
               <FlatList
-                data={tokens}
+                data={tokens.slice(0, 10)}
                 keyExtractor={(t) => t.mint}
                 scrollEnabled={false}
                 renderItem={({ item }) => (
