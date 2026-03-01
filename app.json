@@ -3,8 +3,10 @@
     "name": "SolScan-Lite",
     "slug": "SolScan-Lite",
     "version": "1.0.0",
-    "scheme":"solscanLite",
-    "plugins":["expo-router"],
+    "scheme": "solscanLite",
+    "plugins": [
+      "expo-router"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,13 +25,11 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.SolScanLite"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-router"
-    ]
+    }
   }
 }

@@ -17,6 +17,8 @@ import {
 import { useWalletStore } from "../../src/stores/walletStore";
 import { FavoriteButton } from "../../src/components/favouriteButton";
 import { Ionicons } from "@expo/vector-icons";
+import {ConnectButton} from "../../src/components/connectButton";
+import { useWallet } from "../../src/hooks/useWallet";
 
 export default function WalletScreen() {
   const [address, setAddress] = useState(""); // the addres input by the user
@@ -128,6 +130,8 @@ const timeAgo = (ts: number) => {
     })
   }
 
+  const wallet = useWallet();
+
   return (
     <SafeAreaView style={s.safe}>
       <ScrollView style={s.scroll}>
@@ -136,6 +140,13 @@ const timeAgo = (ts: number) => {
         <View>
         <Text style={s.title}>SolScan Lite</Text>
         <Text style={s.subtitle}>Explore any solana wallet</Text>
+        <ConnectButton 
+        connecting={wallet.connecting}
+          publicKey={wallet.publicKey?.toBase58() ?? null}
+          onConnect={wallet.connect}
+          onDisconnect={wallet.disconnect}
+          connected={wallet.connected}
+        />
         </View>
 
         <View style={s.networkContainer}>
