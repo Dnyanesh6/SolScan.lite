@@ -140,13 +140,15 @@ const timeAgo = (ts: number) => {
         <View>
         <Text style={s.title}>SolScan Lite</Text>
         <Text style={s.subtitle}>Explore any solana wallet</Text>
-        <ConnectButton 
-        connecting={wallet.connecting}
-          publicKey={wallet.publicKey?.toBase58() ?? null}
-          onConnect={wallet.connect}
-          onDisconnect={wallet.disconnect}
-          connected={wallet.connected}
-        />
+        <View style={{paddingHorizontal: 12, paddingVertical: 8}}>
+          <ConnectButton 
+            connecting={wallet.connecting}
+            publicKey={wallet.publicKey?.toBase58() ?? null}
+            onConnect={wallet.connect}
+            onDisconnect={wallet.disconnect}
+            connected={wallet.connected}
+          />
+        </View>
         </View>
 
         <View style={s.networkContainer}>
@@ -213,6 +215,17 @@ const timeAgo = (ts: number) => {
           }
 
         <View>
+
+          {
+            wallet.connected && (
+              <TouchableOpacity 
+              style={s.btnRowSend}
+              onPress={() => router.push("/send")}>
+                <Ionicons name="paper-plane-outline" size={20} color="#FFFFFF" />
+                <Text style={s.btnTextSend}>Send SOL</Text>
+              </TouchableOpacity>
+            )
+          }
           {balance !== null && (
             <View style={s.card}>
             <View style={{position: "absolute", top: 16, right: 16}}>
@@ -322,6 +335,17 @@ const s = StyleSheet.create({
     gap: 12,
     marginTop: 16,
   },
+  btnRowSend: {
+    flexDirection: "row",
+    gap: 12,
+    marginTop: 16,
+    justifyContent: "center",
+    alignContent: "center",
+      paddingVertical: 16,
+    backgroundColor: "#14F195",
+    borderRadius:14,
+
+  },
   clearText: {
     color: "#FFFFFF",
     fontSize: 15,
@@ -349,10 +373,18 @@ const s = StyleSheet.create({
     opacity: 0.6,
   },
   btnText: {
-    color: "#0D0D12",
+    color: "#000000",
     fontWeight: "600",
     fontSize: 16,
     letterSpacing: 0.3,
+  },
+  btnTextSend: {
+    color: "#FFFFFF",
+    backgroundColor:"#14F195",
+    fontWeight: "600",
+    fontSize: 16,
+    letterSpacing: 0.3,
+    justifyContent: "center",
   },
   btnGhost: {
     paddingVertical: 16,
