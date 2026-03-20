@@ -221,7 +221,7 @@ const timeAgo = (ts: number) => {
               <TouchableOpacity 
               style={s.btnRowSend}
               onPress={() => router.push("/send")}>
-                <Ionicons name="paper-plane-outline" size={20} color="#FFFFFF" />
+                <Ionicons name="paper-plane-outline" size={20} color="#000000" />
                 <Text style={s.btnTextSend}>Send SOL</Text>
               </TouchableOpacity>
             )
@@ -379,7 +379,7 @@ const s = StyleSheet.create({
     letterSpacing: 0.3,
   },
   btnTextSend: {
-    color: "#FFFFFF",
+    color: "#000000",
     backgroundColor:"#14F195",
     fontWeight: "600",
     fontSize: 16,

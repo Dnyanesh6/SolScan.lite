@@ -55,7 +55,7 @@ export default function SendScreen() {
     }
   };
 
-  if (wallet.connected) {
+  if (!wallet.connected) {
     return (
       <View style={styles.center}>
         <Ionicons name="wallet-outline" size={64} color="#333" />
